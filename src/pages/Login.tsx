@@ -1,7 +1,16 @@
+import { Button } from "@/components/ui/button";
+import { Field, FieldError, FieldLabel } from "@/components/ui/field";
+import { Input } from "@/components/ui/input";
+import { axiosInstance } from "@/lib/axios";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Eye, EyeOff, PenLine } from "lucide-react";
 import { useState } from "react";
-import z from "zod";
-import { useForm } from "react-hook-form"
-
+import { Controller, useForm } from "react-hook-form";
+import { Link, useNavigate } from "react-router";
+import { z } from "zod";
+import toast from "react-hot-toast";
+import GoogleIcon from "@/components/icons/GoogleIcon";
+import { useAuth } from "@/components/stores/useAuth";
 
 const formSchema = z.object({
   email: z.email(),
@@ -35,7 +44,7 @@ function Login() {
         password: data.password,
       });
 
-      alert("login success");
+      toast.success("login success");
 
       login({
         email: response.data.email,
@@ -47,7 +56,7 @@ function Login() {
       navigate("/");
     } catch (error) {
       console.log(error);
-      alert("login failed");
+      toast.error("login failed");
     } finally {
       setIsPending(false);
     }
@@ -62,7 +71,7 @@ function Login() {
               <PenLine className="h-4 w-4 text-primary-foreground" />
             </span>
             <span className="font-display text-2xl font-semibold tracking-tight">
-              Inkwell
+              Login Create Blog
             </span>
           </Link>
 

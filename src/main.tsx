@@ -8,6 +8,8 @@ import AboutUs from './pages/AboutUs';
 import Services from './pages/Service';
 import ArticlesSection from './components/sections/Articles';
 
+import Login from './pages/Login';
+
 
 
 const router = createBrowserRouter([
@@ -26,6 +28,14 @@ const router = createBrowserRouter([
   {
     path: "/blog",
     element: <ArticlesSection />,
+  },
+  // {
+  //   path: "/teams",
+  //   element: <TeamCard />,
+  // },
+  {
+    path: "/login",
+    element: <Login />,
   },
 ]);
 
