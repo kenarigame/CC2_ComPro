@@ -4,11 +4,28 @@ import './index.css'
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Homepage from './pages/Homepage';
+import AboutUs from './pages/AboutUs';
+import Services from './pages/Service';
+import ArticlesSection from './components/sections/Articles';
+
+
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Homepage />,
+  },
+   {
+    path: "/about",
+    element: <AboutUs />,
+  },
+  {
+    path: "/services",
+    element: <Services />,
+  },
+  {
+    path: "/blog",
+    element: <ArticlesSection />,
   },
 ]);
 

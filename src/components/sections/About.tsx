@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import { CheckCircle2, Target, Lightbulb } from "lucide-react";
-import { stats } from "@/data";
+import { stats } from "../../data";
+
 
 function AnimatedCounter({
   value,
@@ -32,7 +33,7 @@ function AnimatedCounter({
           }, 16);
         }
       },
-      { threshold: 0.5 }
+      { threshold: 0.5 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -46,7 +47,7 @@ function AnimatedCounter({
   );
 }
 
-export function AboutSection() {
+function AboutSection() {
   return (
     <section id="tentang" className="section-padding bg-background">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -80,7 +81,8 @@ export function AboutSection() {
                   Didirikan pada tahun 2009 oleh Dr. Sari Dewi, S.H., M.Kn.,
                   kantor ini telah berkembang menjadi salah satu kantor notaris
                   terpercaya di Jakarta Selatan. Dengan pengalaman lebih dari 15
-                  tahun, kami telah melayani ribuan klien dari berbagai kalangan.
+                  tahun, kami telah melayani ribuan klien dari berbagai
+                  kalangan.
                 </p>
               </div>
               <div>
@@ -102,7 +104,9 @@ export function AboutSection() {
                 ].map((point) => (
                   <div key={point} className="flex items-start gap-3">
                     <CheckCircle2 className="w-5 h-5 text-gold shrink-0 mt-0.5" />
-                    <span className="text-muted-foreground text-sm">{point}</span>
+                    <span className="text-muted-foreground text-sm">
+                      {point}
+                    </span>
                   </div>
                 ))}
               </div>
@@ -141,9 +145,13 @@ export function AboutSection() {
                 ].map((item, i) => (
                   <li key={i} className="flex items-start gap-2.5">
                     <div className="w-5 h-5 rounded-full bg-gold/20 flex items-center justify-center shrink-0 mt-0.5">
-                      <span className="text-gold text-xs font-bold">{i + 1}</span>
+                      <span className="text-gold text-xs font-bold">
+                        {i + 1}
+                      </span>
                     </div>
-                    <span className="text-muted-foreground text-sm">{item}</span>
+                    <span className="text-muted-foreground text-sm">
+                      {item}
+                    </span>
                   </li>
                 ))}
               </ul>
@@ -170,3 +178,5 @@ export function AboutSection() {
     </section>
   );
 }
+
+export default AboutSection;

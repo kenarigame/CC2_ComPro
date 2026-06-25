@@ -4,10 +4,14 @@ import { Button } from "@/components/ui/button";
 import { articles } from "@/data";
 
 const categoryColors: Record<string, string> = {
-  "Hukum Perusahaan": "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800",
-  "Hukum Pertanahan": "bg-green-50 text-green-700 border-green-200 dark:bg-green-950 dark:text-green-300 dark:border-green-800",
-  "Notaris": "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-800",
-  "Hukum Keluarga": "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950 dark:text-purple-300 dark:border-purple-800",
+  "Hukum Perusahaan":
+    "bg-blue-50 text-blue-700 border-blue-200 dark:bg-blue-950 dark:text-blue-300 dark:border-blue-800",
+  "Hukum Pertanahan":
+    "bg-green-50 text-green-700 border-green-200 dark:bg-green-950 dark:text-green-300 dark:border-green-800",
+  Notaris:
+    "bg-amber-50 text-amber-700 border-amber-200 dark:bg-amber-950 dark:text-amber-300 dark:border-amber-800",
+  "Hukum Keluarga":
+    "bg-purple-50 text-purple-700 border-purple-200 dark:bg-purple-950 dark:text-purple-300 dark:border-purple-800",
 };
 
 // Gradient placeholders for article images
@@ -20,7 +24,7 @@ const articleGradients = [
   "from-rose-600 to-pink-700",
 ];
 
-export function ArticlesSection() {
+function ArticlesSection() {
   const featured = articles[0];
   const rest = articles.slice(1, 4);
 
@@ -36,7 +40,8 @@ export function ArticlesSection() {
               </span>
             </div>
             <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-2">
-              Wawasan & <span className="gold-text-gradient">Edukasi Hukum</span>
+              Wawasan &{" "}
+              <span className="gold-text-gradient">Edukasi Hukum</span>
             </h2>
             <p className="text-muted-foreground">
               Artikel informatif untuk membantu Anda memahami hukum dengan mudah
@@ -61,7 +66,9 @@ export function ArticlesSection() {
               >
                 <div className="text-center">
                   <Tag className="w-12 h-12 text-white/40 mx-auto mb-2" />
-                  <span className="text-white/40 text-sm">{featured.category}</span>
+                  <span className="text-white/40 text-sm">
+                    {featured.category}
+                  </span>
                 </div>
                 <div className="absolute inset-0 bg-gradient-to-t from-black/30 to-transparent" />
                 <Badge
@@ -150,3 +157,5 @@ export function ArticlesSection() {
     </section>
   );
 }
+
+export default ArticlesSection;

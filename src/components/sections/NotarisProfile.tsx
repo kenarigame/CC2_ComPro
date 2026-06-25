@@ -2,7 +2,7 @@ import { GraduationCap, Award, MapPin, Building2 } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import { notarisProfile } from "@/data";
 
-export function NotarisProfile() {
+function NotarisProfile() {
   return (
     <section id="profil" className="section-padding bg-secondary/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
@@ -14,8 +14,7 @@ export function NotarisProfile() {
             </span>
           </div>
           <h2 className="text-3xl sm:text-4xl font-black text-foreground mb-4">
-            Kenali{" "}
-            <span className="gold-text-gradient">Notaris Kami</span>
+            Kenali <span className="gold-text-gradient">Notaris Kami</span>
           </h2>
           <p className="text-muted-foreground max-w-2xl mx-auto text-lg">
             Didukung oleh notaris berpengalaman dengan kualifikasi dan rekam
@@ -54,7 +53,9 @@ export function NotarisProfile() {
                     <div className="flex items-start gap-2.5">
                       <Award className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                       <div>
-                        <div className="text-muted-foreground text-xs">SK Pengangkatan</div>
+                        <div className="text-muted-foreground text-xs">
+                          SK Pengangkatan
+                        </div>
                         <div className="text-foreground font-medium text-xs leading-tight">
                           {notarisProfile.sk}
                         </div>
@@ -63,7 +64,9 @@ export function NotarisProfile() {
                     <div className="flex items-start gap-2.5">
                       <MapPin className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                       <div>
-                        <div className="text-muted-foreground text-xs">Wilayah</div>
+                        <div className="text-muted-foreground text-xs">
+                          Wilayah
+                        </div>
                         <div className="text-foreground font-medium text-xs">
                           {notarisProfile.wilayah}
                         </div>
@@ -72,7 +75,9 @@ export function NotarisProfile() {
                     <div className="flex items-start gap-2.5">
                       <Building2 className="w-4 h-4 text-gold shrink-0 mt-0.5" />
                       <div>
-                        <div className="text-muted-foreground text-xs">Pengalaman</div>
+                        <div className="text-muted-foreground text-xs">
+                          Pengalaman
+                        </div>
                         <div className="text-foreground font-medium text-xs">
                           {notarisProfile.experience}
                         </div>
@@ -87,7 +92,9 @@ export function NotarisProfile() {
             <div className="md:col-span-3 space-y-6">
               {/* Bio */}
               <div className="bg-card rounded-2xl p-6 border border-border shadow-sm">
-                <h4 className="font-bold text-foreground mb-3">Tentang Notaris</h4>
+                <h4 className="font-bold text-foreground mb-3">
+                  Tentang Notaris
+                </h4>
                 <p className="text-muted-foreground leading-relaxed">
                   {notarisProfile.bio}
                 </p>
@@ -105,7 +112,9 @@ export function NotarisProfile() {
                   {notarisProfile.education.map((edu, i) => (
                     <li key={i} className="flex items-center gap-3">
                       <div className="w-2 h-2 rounded-full bg-gold shrink-0" />
-                      <span className="text-muted-foreground text-sm">{edu}</span>
+                      <span className="text-muted-foreground text-sm">
+                        {edu}
+                      </span>
                     </li>
                   ))}
                 </ul>
@@ -134,12 +143,16 @@ export function NotarisProfile() {
 
               {/* Organizations */}
               <div className="bg-navy rounded-2xl p-6">
-                <h4 className="font-bold text-white mb-4">Keanggotaan Organisasi</h4>
+                <h4 className="font-bold text-white mb-4">
+                  Keanggotaan Organisasi
+                </h4>
                 <div className="space-y-2.5">
                   {notarisProfile.organizations.map((org) => (
                     <div key={org} className="flex items-center gap-3">
                       <div className="w-5 h-5 rounded-full bg-gold flex items-center justify-center shrink-0">
-                        <span className="text-[oklch(0.15_0.025_264)] text-xs font-bold">✓</span>
+                        <span className="text-[oklch(0.15_0.025_264)] text-xs font-bold">
+                          ✓
+                        </span>
                       </div>
                       <span className="text-white/80 text-sm">{org}</span>
                     </div>
@@ -153,3 +166,5 @@ export function NotarisProfile() {
     </section>
   );
 }
+
+export default NotarisProfile;
