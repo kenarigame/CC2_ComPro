@@ -1,27 +1,26 @@
-import { useState } from "react";
-import {
-  Building2,
-  Briefcase,
-  FileEdit,
-  Handshake,
-  Gift,
-  ScrollText,
-  Stamp,
-  BookCheck,
-  FileSignature,
-  ArrowLeftRight,
-  Shield,
-  Unlock,
-  Split,
-  Home,
-  LandPlot,
-  ArrowRight,
-} from "lucide-react";
-import { Button } from "@/components/ui/button";
+import Navbar from "@/components/sections/Navbar";
 import { Badge } from "@/components/ui/badge";
 import { services, type ServiceItem } from "@/data";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/sections/Navbar";
+import {
+  ArrowLeftRight,
+  ArrowRight,
+  BookCheck,
+  Briefcase,
+  Building2,
+  FileEdit,
+  FileSignature,
+  Gift,
+  Handshake,
+  Home,
+  LandPlot,
+  ScrollText,
+  Shield,
+  Split,
+  Stamp,
+  Unlock,
+} from "lucide-react";
+import { useState } from "react";
 
 const iconMap: Record<string, React.ComponentType<{ className?: string }>> = {
   Building2,
@@ -138,7 +137,7 @@ function Services() {
           </div>
 
           {/* CTA */}
-          <div className="mt-12 text-center">
+          {/* <div className="mt-12 text-center">
             <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-navy rounded-2xl px-8 py-6">
               <p className="text-white/80 text-sm">
                 Tidak menemukan layanan yang Anda butuhkan?
@@ -148,14 +147,14 @@ function Services() {
                 className="bg-gold text-[oklch(0.15_0.025_264)] hover:bg-gold/90 font-bold whitespace-nowrap"
                 onClick={() => {
                   document
-                    .getElementById("kontak")
+                    .getElementById("contact")
                     ?.scrollIntoView({ behavior: "smooth" });
                 }}
               >
                 Konsultasi Gratis
               </Button>
             </div>
-          </div>
+          </div> */}
         </div>
       </section>
     </div>

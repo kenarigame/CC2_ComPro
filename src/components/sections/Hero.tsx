@@ -71,23 +71,23 @@ function HeroSection() {
 
             {/* CTAs */}
             <div className="flex flex-col sm:flex-row gap-3">
-              <Button
+              {/* <Button
                 size="lg"
                 onClick={() => scrollTo("kontak")}
                 className="bg-navy text-white hover:bg-navy/90 font-semibold h-12 px-7 text-base"
               >
                 <MessageCircle className="w-4.5 h-4.5 mr-2" />
                 Konsultasi Sekarang
-              </Button>
-              <Button
+              </Button> */}
+              {/* <Button
                 size="lg"
                 variant="outline"
-                onClick={() => scrollTo("layanan")}
+                onClick={() => scrollTo("/services")}
                 className="border-border text-foreground hover:bg-secondary h-12 px-7 text-base font-semibold"
               >
                 Lihat Layanan
                 <ArrowRight className="w-4 h-4 ml-2" />
-              </Button>
+              </Button> */}
             </div>
           </div>
 

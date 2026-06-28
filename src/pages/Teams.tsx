@@ -1,31 +1,60 @@
-import { Button } from "@/components/ui/button";
-import { Mail } from "lucide-react";
+export const Route = create("/team")({
+  head: () => ({
+    meta: [
+      { title: "Team — Whitman & Co. Notary" },
+      {
+        name: "description",
+        content:
+          "Meet the licensed notaries and legal consultants behind our practice.",
+      },
+      { property: "og:title", content: "Team — Whitman & Co. Notary" },
+      {
+        property: "og:description",
+        content:
+          "Meet the licensed notaries and legal consultants behind our practice.",
+      },
+    ],
+  }),
+  component: TeamPage,
+});
 
-function TeamCard({ member }: { member: TeamMember }) {
+function TeamPage() {
+  const leadership = TEAM.filter((t) => t.group === "leadership");
+  const consultants = TEAM.filter((t) => t.group === "consultant");
   return (
-    <div className="overflow-hidden rounded-xl border border-border bg-card text-center transition-all hover:-translate-y-0.5 hover:shadow-[var(--shadow-soft)]">
-      <div className="aspect-square overflow-hidden bg-muted">
-        <img
-          src={member.photo}
-          alt={member.name}
-          loading="lazy"
-          className="h-full w-full object-cover"
-        />
-      </div>
-      <div className="flex flex-col gap-2 p-5">
-        <h3 className="text-base font-semibold text-foreground">
-          {member.name}
-        </h3>
-        <p className="text-xs font-medium uppercase tracking-wide text-primary">
-          {member.position}
-        </p>
-        <p className="text-sm text-muted-foreground">{member.bio}</p>
-        <Button variant="outline" size="sm" className="mt-3 gap-1.5">
-          <Mail className="h-4 w-4" /> Contact
-        </Button>
-      </div>
-    </div>
+    <SiteLayout>
+      <section className="border-b border-border bg-section">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <p className="text-sm font-semibold uppercase tracking-wider text-primary">
+            Our people
+          </p>
+          <h1 className="mt-3 max-w-3xl text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
+            The notaries and consultants behind every file.
+          </h1>
+        </div>
+      </section>
+      <section className="border-b border-border">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold">Leadership</h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {leadership.map((m) => (
+              <TeamCard key={m.id} member={m} />
+            ))}
+          </div>
+        </div>
+      </section>
+      <section className="bg-section">
+        <div className="mx-auto max-w-7xl px-4 py-20 sm:px-6 lg:px-8">
+          <h2 className="text-2xl font-bold">Legal consultants</h2>
+          <div className="mt-8 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+            {consultants.map((m) => (
+              <TeamCard key={m.id} member={m} />
+            ))}
+          </div>
+        </div>
+      </section>
+    </SiteLayout>
   );
 }
 
-export default TeamCard;
+export default TeamPage;

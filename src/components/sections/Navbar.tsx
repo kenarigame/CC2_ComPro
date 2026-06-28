@@ -4,21 +4,23 @@ import { Menu, X, Scale } from "lucide-react";
 import { SITE } from "../../data/site";
 import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "../ui/button";
+import { useAuth } from "../stores/useAuth";
 
 type NavItem = { label: string; to: string; hash?: string };
 const NAV: NavItem[] = [
   { label: "Beranda", to: "/" },
   { label: "Tentang Kami", to: "/about" },
   { label: "Layanan", to: "/services" },
-  { label: "Artikel", to: "/blog" },
-  { label: "Teams", to: "/teams"},
-  { label: "Testimoni", to: "/", hash: "testimoni" },
+  // { label: "Artikel", to: "/blog" },
+  // { label: "Teams", to: "/teams" },
+  // { label: "Testimoni", to: "/", hash: "testimoni" },
   { label: "Kontak", to: "/contact" },
 ];
 
 function Navbar() {
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const { user, logout } = useAuth();
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 12);
@@ -64,9 +66,49 @@ function Navbar() {
               <span className="absolute inset-x-3 -bottom-0.5 h-px scale-x-0 bg-gold transition-transform duration-300 hover:scale-x-100" />
             </Link>
           ))}
-        </nav>
 
-        <Button className="hidden lg:flex items-center gap-3">
+          {/* <Link to="/" className="hover:text-foreground transition-colors">
+              Stories
+            </Link>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Topics
+            </a>
+            <a href="#" className="hover:text-foreground transition-colors">
+              Authors
+            </a> */}
+
+          {!!user && (
+            <Link
+              to="/createblog"
+              className="relative px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
+            >
+              Create Blog
+            </Link>
+          )}
+        </nav>
+        <div className="hidden md:flex items-center gap-3">
+          {!user ? (
+            <Link to="/login">
+              <Button variant="ghost" size="sm" className="hidden lg:flex items-center gap-3">
+                Sign in
+              </Button>
+            </Link>
+          ) : (
+            <>
+              <Link to="/createblog">
+                <Button className="gradient-primary text-primary-foreground hover:opacity-90 shadow-glow">
+                  Start writing
+                </Button>
+              </Link>
+
+              <Button variant="destructive" onClick={logout}>
+                Logout
+              </Button>
+            </>
+          )}
+        </div>
+        
+        {/* <Button className="hidden lg:flex items-center gap-3">
           <a
             href={SITE.whatsappLink}
             target="_blank"
@@ -75,7 +117,7 @@ function Navbar() {
           >
             Konsultasi Sekarang
           </a>
-        </Button>
+        </Button> */}
 
         <button
           aria-label="Toggle menu"
@@ -94,12 +136,12 @@ function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden overflow-hidden border-t border-border bg-white"
           >
-            <div className="container-page py-4 flex flex-col gap-1">
+            {/* <div className="container-page py-4 flex flex-col gap-1">
               {NAV.map((item) => (
                 <Link
                   key={item.label}
                   to={item.to}
-                //   hash={item.hash}
+                  //   hash={item.hash}
                   onClick={() => setOpen(false)}
                   className="px-2 py-2.5 text-sm font-medium text-foreground/80 hover:text-navy"
                 >
@@ -114,7 +156,7 @@ function Navbar() {
               >
                 Konsultasi Sekarang
               </a>
-            </div>
+            </div> */}
           </motion.div>
         )}
       </AnimatePresence>

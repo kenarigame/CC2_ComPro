@@ -1,14 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import './index.css'
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import Homepage from './pages/Homepage';
+import ContactSection from './components/sections/Contact';
+import './index.css';
 import AboutUs from './pages/AboutUs';
-import Services from './pages/Service';
-import ArticlesSection from './components/sections/Articles';
-
+import BlogDetail from './pages/BlogDetail';
+import CreateBlog from './pages/CreateBlog';
+import Homepage from './pages/Homepage';
 import Login from './pages/Login';
+import Services from './pages/Service';
 
 
 
@@ -27,7 +28,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/blog",
-    element: <ArticlesSection />,
+    element: <BlogDetail />,
+  },
+  {
+    path: "/createblog",
+    element: <CreateBlog />,
   },
   // {
   //   path: "/teams",
@@ -36,6 +41,10 @@ const router = createBrowserRouter([
   {
     path: "/login",
     element: <Login />,
+  },
+  {
+    path: "/contact",
+    element: <ContactSection />,
   },
 ]);
 
