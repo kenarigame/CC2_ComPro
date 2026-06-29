@@ -1,10 +1,9 @@
-import { ArrowRight, MessageCircle, CheckCircle2 } from "lucide-react";
-import { Button } from "../ui/button";
+import { CheckCircle2 } from "lucide-react";
 import { Separator } from "../ui/separator";
 
 function HeroSection() {
-  const scrollTo = (id: string) =>
-    document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
+  // const scrollTo = (id: string) =>
+  //   document.getElementById(id)?.scrollIntoView({ behavior: "smooth" });
 
   return (
     <section
@@ -18,7 +17,7 @@ function HeroSection() {
         {/* Gold vertical line */}
         <div className="absolute top-0 right-[45%] w-px h-full bg-border" />
         {/* Gold accent strip */}
-        <div className="absolute top-0 right-[45%] w-[3px] h-32 bg-gold" />
+        <div className="absolute top-0 right-[45%] w-3px h-32 bg-gold" />
       </div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8 pt-24 pb-12">
@@ -67,27 +66,6 @@ function HeroSection() {
                   </span>
                 </div>
               ))}
-            </div>
-
-            {/* CTAs */}
-            <div className="flex flex-col sm:flex-row gap-3">
-              {/* <Button
-                size="lg"
-                onClick={() => scrollTo("kontak")}
-                className="bg-navy text-white hover:bg-navy/90 font-semibold h-12 px-7 text-base"
-              >
-                <MessageCircle className="w-4.5 h-4.5 mr-2" />
-                Konsultasi Sekarang
-              </Button> */}
-              {/* <Button
-                size="lg"
-                variant="outline"
-                onClick={() => scrollTo("/services")}
-                className="border-border text-foreground hover:bg-secondary h-12 px-7 text-base font-semibold"
-              >
-                Lihat Layanan
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Button> */}
             </div>
           </div>
 
