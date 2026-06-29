@@ -57,10 +57,10 @@ function Navbar() {
             <Link
               key={item.label}
               to={item.to}
-              hash={item.hash}
+              // hash={item.hash}
               className="relative px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
-              activeProps={{ className: "text-navy" }}
-              activeOptions={{ exact: item.to === "/" && !item.hash }}
+              // activeProps={{ className: "text-navy" }}
+              // activeOptions={{ exact: item.to === "/" && !item.hash }}
             >
               {item.label}
               <span className="absolute inset-x-3 -bottom-0.5 h-px scale-x-0 bg-gold transition-transform duration-300 hover:scale-x-100" />
