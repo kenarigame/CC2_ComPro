@@ -3,6 +3,7 @@ import { CheckCircle2 } from "lucide-react";
 import { stats } from "../data";
 import Navbar from "@/components/sections/Navbar";
 import NotarisProfile from "@/components/sections/NotarisProfile";
+import Footer from "@/components/sections/Footer";
 
 function AnimatedCounter({
   value,
@@ -188,6 +189,7 @@ function AboutUs() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
