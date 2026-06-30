@@ -24,10 +24,10 @@ const router = createBrowserRouter([
     path: "/services",
     element: <Services />,
   },
-  // {
-  //   path: "/blogs/:objectId",
-  //   element: <BlogDetail />,
-  // },
+  {
+    path: "/blogs/:objectId",
+    element: <BlogDetail />,
+  },
   {
     path: "/createblog",
     element: <CreateBlog />,
