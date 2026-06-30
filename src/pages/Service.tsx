@@ -5,7 +5,6 @@ import { services, type ServiceItem } from "@/data";
 import { cn } from "@/lib/utils";
 import {
   ArrowLeftRight,
-  ArrowRight,
   BookCheck,
   Briefcase,
   Building2,
