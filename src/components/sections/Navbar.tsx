@@ -37,7 +37,7 @@ function Navbar() {
           : "bg-white border-b border-transparent"
       }`}
     >
-      <div className="container-page flex h-18 items-center justify-between py-3">
+      <div className="container-page flex h-18 items-center justify-between px-3 py-3">
         <Link to="/" className="flex items-center gap-2.5 group">
           <span className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy text-gold transition-transform group-hover:scale-105">
             <Scale className="h-5 w-5" strokeWidth={2} />
@@ -89,7 +89,11 @@ function Navbar() {
         <div className="hidden md:flex items-center gap-3">
           {!user ? (
             <Link to="/login">
-              <Button variant="ghost" size="sm" className="hidden lg:flex items-center gap-3">
+              <Button
+                variant="ghost"
+                size="sm"
+                className="hidden lg:flex items-center gap-3"
+              >
                 Sign in
               </Button>
             </Link>
@@ -107,17 +111,6 @@ function Navbar() {
             </>
           )}
         </div>
-        
-        {/* <Button className="hidden lg:flex items-center gap-3">
-          <a
-            href={SITE.whatsappLink}
-            target="_blank"
-            rel="noreferrer"
-            className="btn-gold text-sm"
-          >
-            Konsultasi Sekarang
-          </a>
-        </Button> */}
 
         <button
           aria-label="Toggle menu"
@@ -135,29 +128,7 @@ function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden overflow-hidden border-t border-border bg-white"
-          >
-            {/* <div className="container-page py-4 flex flex-col gap-1">
-              {NAV.map((item) => (
-                <Link
-                  key={item.label}
-                  to={item.to}
-                  //   hash={item.hash}
-                  onClick={() => setOpen(false)}
-                  className="px-2 py-2.5 text-sm font-medium text-foreground/80 hover:text-navy"
-                >
-                  {item.label}
-                </Link>
-              ))}
-              <a
-                href={SITE.whatsappLink}
-                target="_blank"
-                rel="noreferrer"
-                className="btn-gold mt-2 text-sm"
-              >
-                Konsultasi Sekarang
-              </a>
-            </div> */}
-          </motion.div>
+          ></motion.div>
         )}
       </AnimatePresence>
     </header>
