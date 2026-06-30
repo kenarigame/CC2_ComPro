@@ -1,3 +1,4 @@
+import Footer from "@/components/sections/Footer";
 import Navbar from "@/components/sections/Navbar";
 import { Badge } from "@/components/ui/badge";
 import { services, type ServiceItem } from "@/data";
@@ -135,28 +136,9 @@ function Services() {
               <ServiceCard key={service.id} service={service} />
             ))}
           </div>
-
-          {/* CTA */}
-          {/* <div className="mt-12 text-center">
-            <div className="inline-flex flex-col sm:flex-row items-center gap-4 bg-navy rounded-2xl px-8 py-6">
-              <p className="text-white/80 text-sm">
-                Tidak menemukan layanan yang Anda butuhkan?
-              </p>
-              <Button
-                size="sm"
-                className="bg-gold text-[oklch(0.15_0.025_264)] hover:bg-gold/90 font-bold whitespace-nowrap"
-                onClick={() => {
-                  document
-                    .getElementById("contact")
-                    ?.scrollIntoView({ behavior: "smooth" });
-                }}
-              >
-                Konsultasi Gratis
-              </Button>
-            </div>
-          </div> */}
         </div>
       </section>
+      <Footer />
     </div>
   );
 }

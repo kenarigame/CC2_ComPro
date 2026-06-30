@@ -2,7 +2,6 @@ import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
-import ContactSection from "./components/sections/Contact";
 import "./index.css";
 import AboutUs from "./pages/AboutUs";
 import BlogDetail from "./pages/BlogDetail";
@@ -11,6 +10,7 @@ import Homepage from "./pages/Homepage";
 import Login from "./pages/Login";
 import Services from "./pages/Service";
 import Artikel from "./pages/Articels";
+import Contact from "./pages/Contact";
 
 const router = createBrowserRouter([
   {
@@ -29,7 +29,7 @@ const router = createBrowserRouter([
     path: "/blogs/:objectId",
     element: <BlogDetail />,
   },
-   {
+  {
     path: "/blogs",
     element: <Artikel />,
   },
@@ -43,7 +43,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/contact",
-    element: <ContactSection />,
+    element: <Contact />,
   },
 ]);
 

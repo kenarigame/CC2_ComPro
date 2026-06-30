@@ -13,7 +13,8 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { siteConfig, services } from "@/data";
 import { cn } from "@/lib/utils";
-import Navbar from "./Navbar";
+import Navbar from "../components/sections/Navbar";
+import Footer from "@/components/sections/Footer";
 
 const contactInfo = [
   {
@@ -50,7 +51,7 @@ type FormState = {
   message: string;
 };
 
-function ContactSection() {
+function Contact() {
   const [form, setForm] = useState<FormState>({
     name: "",
     email: "",
@@ -162,7 +163,9 @@ function ContactSection() {
                       <span className="text-white/90">08.00 – 13.00</span>
                     </div> */}
                     <div className="flex justify-between">
-                      <span className="text-white/60">Sabtu, Minggu & Libur Nasional</span>
+                      <span className="text-white/60">
+                        Sabtu, Minggu & Libur Nasional
+                      </span>
                       <span className="text-red-400">Tutup</span>
                     </div>
                   </div>
@@ -354,8 +357,9 @@ function ContactSection() {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   );
 }
 
-export default ContactSection;
+export default Contact;
