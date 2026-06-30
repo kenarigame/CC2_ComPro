@@ -3,6 +3,7 @@ import Footer from "@/components/sections/Footer";
 import Navbar from "@/components/sections/Navbar";
 import type { Blog } from "@/components/types/blog";
 import { axiosInstance } from "@/lib/axios";
+import { Loader } from "lucide-react";
 import { useEffect, useState } from "react";
 
 function Artikel() {
