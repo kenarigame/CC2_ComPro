@@ -69,10 +69,6 @@ function ServiceCard({ service }: { service: ServiceItem }) {
       <p className="text-muted-foreground text-sm leading-relaxed flex-1 mb-4">
         {service.description}
       </p>
-      <button className="flex items-center gap-1.5 text-gold text-sm font-semibold hover:gap-3 transition-all group/btn">
-        Lihat Detail
-        <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-      </button>
     </div>
   );
 }
