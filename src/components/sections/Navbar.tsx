@@ -6,12 +6,12 @@ import { AnimatePresence, motion } from "framer-motion";
 import { Button } from "../ui/button";
 import { useAuth } from "../stores/useAuth";
 
-type NavItem = { label: string; to: string; hash?: string };
+type NavItem = { label: string; to: string };
 const NAV: NavItem[] = [
   { label: "Beranda", to: "/" },
   { label: "Tentang Kami", to: "/about" },
   { label: "Layanan", to: "/services" },
-  // { label: "Artikel", to: "/blog" },
+  { label: "Artikel", to: "/blogs" },
   // { label: "Teams", to: "/teams" },
   // { label: "Testimoni", to: "/", hash: "testimoni" },
   { label: "Kontak", to: "/contact" },
@@ -57,35 +57,21 @@ function Navbar() {
             <Link
               key={item.label}
               to={item.to}
-              // hash={item.hash}
-              className="relative px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
-              // activeProps={{ className: "text-navy" }}
-              // activeOptions={{ exact: item.to === "/" && !item.hash }}
+              className="block px-6 py-3 hover:bg-gray-100"
+              onClick={() => setOpen(false)}
             >
               {item.label}
-              <span className="absolute inset-x-3 -bottom-0.5 h-px scale-x-0 bg-gold transition-transform duration-300 hover:scale-x-100" />
             </Link>
           ))}
-
-          {/* <Link to="/" className="hover:text-foreground transition-colors">
-              Stories
-            </Link>
-            <a href="#" className="hover:text-foreground transition-colors">
-              Topics
-            </a>
-            <a href="#" className="hover:text-foreground transition-colors">
-              Authors
-            </a> */}
-
-          {!!user && (
+        </nav>
+        {/* {!!user && (
             <Link
               to="/createblog"
               className="relative px-3 py-2 text-sm font-medium text-foreground/80 transition-colors hover:text-navy"
             >
               Create Blog
             </Link>
-          )}
-        </nav>
+          )} */}
         <div className="hidden md:flex items-center gap-3">
           {!user ? (
             <Link to="/login">
@@ -128,7 +114,20 @@ function Navbar() {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             className="lg:hidden overflow-hidden border-t border-border bg-white"
-          ></motion.div>
+          >
+            <nav className="flex flex-col p-4">
+              {NAV.map((item) => (
+                <Link
+                  key={item.label}
+                  to={item.to}
+                  className="py-3 text-foreground hover:text-navy"
+                  onClick={() => setOpen(false)}
+                >
+                  {item.label}
+                </Link>
+              ))}
+            </nav>
+          </motion.div>
         )}
       </AnimatePresence>
     </header>

@@ -2,6 +2,7 @@ import { Link } from "react-router";
 import { ArrowRight } from "lucide-react";
 import type { Blog } from "../types/blog";
 
+
 export function BlogCard({ blog }: { blog: Blog }) {
   return (
     <Link

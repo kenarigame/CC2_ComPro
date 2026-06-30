@@ -1,4 +1,4 @@
-import ArticlesSection from "@/components/sections/Articles";
+import ArticlesSection from "@/components/sections/GridArtikel";
 import FeaturesSection from "@/components/sections/Features";
 import { FloatingButtons } from "@/components/sections/FloatingButton";
 import NotarisProfile from "@/components/sections/NotarisProfile";

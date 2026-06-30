@@ -5,7 +5,6 @@ import { ChevronRight } from "lucide-react";
 import { useEffect, useState } from "react";
 import { Link, useParams } from "react-router";
 
-
 function BlogDetail() {
   const params = useParams();
 
@@ -54,7 +53,7 @@ function BlogDetail() {
           <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8 pt-8">
             <nav className="flex items-center gap-1.5 text-xs text-muted-foreground">
               <Link to="/" className="hover:text-foreground">
-                Home
+                Stories
               </Link>
               <ChevronRight className="h-3 w-3" />
               <span className="text-foreground">{blog?.category}</span>

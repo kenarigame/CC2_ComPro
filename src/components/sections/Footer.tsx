@@ -37,7 +37,7 @@ function Footer() {
               { label: "Beranda", to: "/" },
               { label: "Tentang Kami", to: "/about" },
               { label: "Layanan", to: "/services" },
-              { label: "Artikel", to: "/blog" },
+              { label: "Artikel", to: "/blogs" },
               { label: "Kontak", to: "/contact" },
             ].map((l) => (
               <li key={l.label}>
@@ -89,7 +89,7 @@ function Footer() {
         </div>
       </div>
       <div className="border-t border-white/10">
-        <div className="container-page py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/50">
+        <div className="container-page px-3 py-5 flex flex-col md:flex-row items-center justify-between gap-2 text-xs text-white/50">
           <p>
             © {year} {SITE.name}. All Rights Reserved.
           </p>
