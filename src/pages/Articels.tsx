@@ -5,7 +5,7 @@ import type { Blog } from "@/components/types/blog";
 import { axiosInstance } from "@/lib/axios";
 import { useEffect, useState } from "react";
 
-export default function BlogList() {
+function Artikel() {
   const [blogs, setBlogs] = useState<Blog[]>([]);
   const [isPending, setIsPending] = useState<boolean>(true);
   const getBlogs = async () => {
@@ -27,6 +27,14 @@ export default function BlogList() {
     <article>
       <Navbar />
       <section className="container mx-auto py-10">
+        {isPending && (
+        <div className="flex justify-center">
+          <p className="py-12 flex items-center gap-2">
+            <Loader className="animate-spin" />
+            Loading...
+          </p>
+        </div>
+      )}
         <h1 className="mb-8 text-3xl font-bold">Artikel</h1>
 
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -39,3 +47,5 @@ export default function BlogList() {
     </article>
   );
 }
+
+export default Artikel;
